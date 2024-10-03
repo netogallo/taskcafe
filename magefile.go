@@ -106,15 +106,15 @@ func flagEnv() map[string]string {
 	if err != nil {
 		fmt.Println("[ignore] fatal: no tag matches")
 	}
-	tag, err := sh.Output("git", "describe", "--exact-match", "--tags")
-	if err != nil {
-		tag = "nightly"
-	}
+	//tag, err := sh.Output("git", "describe", "--exact-match", "--tags")
+	//if err != nil {
+	//	tag = "nightly"
+	//}
 	return map[string]string{
 		"PACKAGE":     packageName,
 		"COMMIT_HASH": hash,
 		"BUILD_DATE":  time.Now().Format("2006-01-02T15:04:05Z0700"),
-		"VERSION":     tag,
+		"VERSION":     "demo",
 	}
 }
 
